@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="col-3">
+		<div
+			class="card"
+			style="width: 18rem"
+		>
+			<img
+				src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSIsmpJQm0OTBcGyY-Y3ECq4UMpN2lAcagoQ&usqp=CAU"
+				class="card-img-top"
+				alt="..."
+			/>
+			<div class="card-body">
+				<h5 class="card-title">{{ product?.name }}</h5>
+				<p class="card-text">
+					{{ product?.price }}
+				</p>
+				<a
+					[routerLink]="['/products/', product?.id]"
+					class="btn btn-primary"
+					>View</a
+				>
+			</div>
+		</div>
+	</div>
+</div>
