@@ -1,15 +1,15 @@
 import { Component } from "@angular/core";
-import { ProductsService } from "src/app/services/products.service";
+import { ProductService } from "src/app/services/product.service";
 
 @Component({
-	selector: "app-product-manager",
-	templateUrl: "./product-manager.component.html",
-	styleUrls: ["./product-manager.component.scss"],
+	selector: "app-products-manager",
+	templateUrl: "./products-manager.component.html",
+	styleUrls: ["./products-manager.component.scss"],
 })
-export class ProductManagerComponent {
+export class ProductsManagerComponent {
 	products: any = [];
 
-	constructor(private productService: ProductsService) {
+	constructor(private productService: ProductService) {
 		this.productService.getProducts().subscribe((data) => (this.products = data));
 	}
 

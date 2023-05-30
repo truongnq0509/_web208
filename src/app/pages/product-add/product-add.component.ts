@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { ProductsService } from "src/app/services/products.service";
+import { ProductService } from "src/app/services/product.service";
 import { Router } from "@angular/router";
 
 @Component({
@@ -13,9 +13,9 @@ export class ProductAddComponent {
 		price: "",
 	};
 
-	constructor(private router: Router, private productService: ProductsService) {}
+	constructor(private router: Router, private productService: ProductService) {}
 
 	onSubmit() {
-		this.productService.createProduct(this.product).subscribe((data) => this.router.navigate(["/admin/products"]));
+		this.productService.createProduct(this.product).subscribe(() => this.router.navigate(["/admin/products"]));
 	}
 }

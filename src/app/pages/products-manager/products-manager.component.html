@@ -1,6 +1,7 @@
 <button class="btn btn-success">
-	<a routerLink="/admin/products/add">Create new product</a>
+	<a [routerLink]="['/admin/products/add']">Creat new product</a>
 </button>
+
 <table class="table">
 	<thead>
 		<tr>
@@ -17,13 +18,13 @@
 			<td>{{ product?.price }}</td>
 			<td>
 				<button
+					(click)="onRemove(product?.id)"
 					class="btn btn-danger"
-					(click)="onRemove(product.id)"
 				>
 					Remove
 				</button>
 				<button class="btn btn-info">
-					<a [routerLink]="['/admin/products/', product?.id, 'edit']">Edit</a>
+					<a [routerLink]="['/admin/products/', product?.id, 'edit']">Update</a>
 				</button>
 			</td>
 		</tr>
